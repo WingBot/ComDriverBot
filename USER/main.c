@@ -4,10 +4,6 @@
 #include "usart.h"
 #include "ps2.h"
 #include "driver.h"
-//ALIENTEK miniSTM32ø™∑¢∞Â µ—È1
-//≈‹¬Ìµ∆ µ—È  
-//ºº ı÷ß≥÷£∫www.openedv.com
-//π„÷› ––«“ÌµÁ◊”ø∆ºº”–œﬁπ´Àæ
 
 int main(void)
  {	
@@ -16,12 +12,12 @@ int main(void)
 //	u16 times=0; 
 //	u8 PS2_KEY = 0; 
 //	u8 data[4];
-	delay_init();	    	 	//—” ±∫Ø ˝≥ı ºªØ	
-	NVIC_Configuration();	//‰∏≠Êñ≠ÂàùÂßãÂåñ
-	uart_init(57600);	 		//‰∏≤Âè£1ÂàùÂßãÂåñÔºö57600 
-	uart2_init(57600);	 	//‰∏≤Âè£2ÂàùÂßãÂåñÔºö57600
-	LED_Init();		  	 //≥ı ºªØ”ÎLED¡¨Ω”µƒ”≤º˛Ω”ø⁄ 
-	PS2_Init();							   //PS2 ÷±˙≥ı ºªØ
+	delay_init();	    	 	//delay function initialization
+	NVIC_Configuration();	//set interrupt priority grouping
+	uart_init(57600);	 		//uart1 initializationÔºö57600 
+	uart2_init(57600);	 	//uart2 initializationÔºö57600
+	LED_Init();		  	 		//LED initialization
+	PS2_Init();						//PS2 joystick initialization 
   LED_ON;
 	delay_ms(50);
 	LED_OFF;
@@ -30,16 +26,14 @@ int main(void)
 	delay_ms(50);
 	LED_OFF;
 	 LED_ON;
+		//set the motor driver mode to power on
 		COM_GIIMBot_DRV_Motor_Mode(UART1_2,MotorPowerOn);
+		//set the motor driver input mode to Position from PC 
 		COM_GIIMBot_DRV_Mode_Choice(UART1,ModeChoicePositionPC);
 
-		//COM_GIIMBot_DRV_Motor_Mode(UART1,MotorPowerOff);
-	//COM_GIIMBot_DRV_Motor_Mode(UART1,MotorPowerOn);
-	//COM_GIIMBot_DRV_Mode_Choice(UART1,ModeChoicePositionPC);
 	 while(1)
 	{
-		//COM_GIIMBot_DRV_Position_Mode(UART1,100,5000);
-		//COM_GIIMBot_DRV_Position_Mode(UART2,100,-5000);
+
 		delay_ms(5000);
 		LED_OFF;
 		
@@ -48,7 +42,7 @@ int main(void)
 		delay_ms(10000);
 		LED_ON;
 		
-				delay_ms(5000);
+		delay_ms(5000);
 		LED_OFF;
 		
 		COM_GIIMBot_DRV_Position_Mode(UART1,40,10000);
