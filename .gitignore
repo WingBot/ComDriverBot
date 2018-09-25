@@ -3,8 +3,6 @@
 *.crf
 *.d
 OBJ/ExtDll.iex
-OBJ/LED(冲突文件).axf
-OBJ/LED(苏泽荣).axf
 OBJ/LED.axf
 OBJ/LED.build_log.htm
 OBJ/LED.hex
