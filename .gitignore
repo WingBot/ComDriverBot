@@ -1,0 +1,22 @@
+
+*.o
+*.crf
+*.d
+OBJ/ExtDll.iex
+OBJ/LED(冲突文件).axf
+OBJ/LED(苏泽荣).axf
+OBJ/LED.axf
+OBJ/LED.build_log.htm
+OBJ/LED.hex
+OBJ/LED.htm
+OBJ/LED.lnp
+OBJ/LED.sct
+OBJ/LED_sct.Bak
+USER/LED.map
+USER/LED.uvgui.Administrator
+USER/LED.uvgui.bot
+USER/LED.uvgui_bot.bak
+USER/LED.uvopt
+USER/LED_Target 1.dep
+USER/LED_uvopt.bak
+USER/LED_uvproj.bak
